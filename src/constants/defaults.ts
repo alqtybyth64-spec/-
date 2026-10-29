@@ -1,0 +1,60 @@
+import { SiteSettings, AppStateData } from '../types';
+
+export const DEFAULT_SETTINGS: SiteSettings = {
+  siteName: 'TAHA',
+  siteDescription: 'الموقع الرسمي لتطبيقات وبرامج طه القطيبي',
+  logoUrl: '',
+  iconUrl: '/icon.svg',
+  primaryColor: '#0b1329',
+  secondaryColor: '#0284c7',
+  whatsappNumber: '', // Strictly empty initially
+  whatsappMessage: 'مرحبًا بك، أود الاستفسار حول خدمات وتطبيقات TAHA',
+  showFloatingWhatsapp: true,
+  developerName: 'طه القطيبي',
+  developerBio: 'مهندس برمجيات ومطور تطبيقات، متخصص في بناء الحلول التقنية الحديثة وتطوير تطبيقات أندرويد وأنظمة الويب المتكاملة.',
+  heroTitle: 'المنصة الرسمية لتطبيقات وبرامج TAHA',
+  heroSubtitle: 'استكشف وحمّل أحدث البرامج والحلول الرقمية الآمنة المصممة بعناية فائقة',
+  footerText: 'منصة TAHA الرقمية - جميع التطبيقات والبرامج مطورة بأعلى معايير الأمان والأداء.',
+  copyrightText: 'جميع الحقوق محفوظة © 2026 - طه القطيبي',
+  seoTitle: 'TAHA - الموقع الرسمي لتطبيقات وبرامج طه القطيبي',
+  seoDescription: 'الموقع الرسمي لتطبيقات وبرامج طه القطيبي - استكشف أحدث التطبيقات والبرامج وحلول تطوير الويب وتطبيقات الهاتف.',
+  privacyPolicyText: `سياسة الخصوصية لمنصة TAHA:
+نحن في منصة TAHA نولي خصوصية الزوار والمستخدمين أهمية بالغة.
+1. جمع البيانات: لا نقوم بجمع أو مشاركة أي بيانات شخصية إلا ما يقدمه المستخدم برغبته الكاملة عند إرسال طلب تصميم موقع أو التواصل المباشر.
+2. ملفات التطبيقات: جميع ملفات التطبيقات والبرامج يتم فحصها بدقة لضمان سلامتها وخلوها من أي برمجيات ضارة.
+3. الأطراف الثالثة: لا نقوم ببيع أو مشاركة بيانات المستخدمين مع أي جهات خارجية.
+4. التحديثات: نحتفظ بالحق في تعديل هذه السياسة عند الحاجة بما يخدم حماية خصوصية المستخدمين.`,
+  sectionVisibility: {
+    hero: true,
+    ads: true,
+    search: true,
+    categories: true,
+    featured: true,
+    latest: true,
+    developer: true,
+    webDesignRequest: true,
+    contact: true,
+    footer: true,
+  },
+  sectionOrder: [
+    'ads',
+    'hero',
+    'search',
+    'categories',
+    'featured',
+    'latest',
+    'webDesignRequest',
+    'developer',
+    'contact',
+  ],
+  categories: ['عام', 'أدوات ونظام', 'إنتاجية وأعمال', 'تعليم ومعرفة', 'إسلاميات', 'وسائط وترفيه'],
+  updatedAt: new Date().toISOString(),
+};
+
+export const INITIAL_EMPTY_STATE: AppStateData = {
+  settings: DEFAULT_SETTINGS,
+  apps: [], // STRICTLY EMPTY
+  ads: [],  // STRICTLY EMPTY
+  socialLinks: [], // STRICTLY EMPTY
+  serviceRequests: [],
+};

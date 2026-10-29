@@ -1,0 +1,6 @@
+{
+  "name": "TAHA Software Hub",
+  "description": "المنصة الرسمية لتطبيقات وبرامج طه القطيبي وحلول تطوير الويب",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

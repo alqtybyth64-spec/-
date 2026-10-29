@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#4facfe" stop-opacity="0.1" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Base with Rounded Corner Squircle -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+
+  <!-- Outer Tech Border Ring -->
+  <rect x="24" y="24" width="464" height="464" rx="96" fill="none" stroke="url(#cyanGrad)" stroke-width="6" stroke-opacity="0.35" stroke-dasharray="16 8" />
+
+  <!-- Central Ambient Glow -->
+  <circle cx="256" cy="230" r="140" fill="url(#glowGrad)" opacity="0.3" filter="url(#glow)" />
+
+  <!-- Dynamic Geometric Emblem: Stylized T & H Monogram / App Cube -->
+  <g transform="translate(136, 90)">
+    <!-- Top Bar of T -->
+    <rect x="20" y="10" width="200" height="38" rx="12" fill="url(#cyanGrad)" />
+    <!-- Center Column of T merging into Tech Matrix -->
+    <rect x="100" y="48" width="40" height="90" rx="10" fill="url(#cyanGrad)" />
+
+    <!-- Corner Accents & Code Brackets -->
+    <path d="M0,45 L15,30 L35,30" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round" />
+    <path d="M240,45 L225,30 L205,30" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round" />
+
+    <!-- Software Hub Nodes -->
+    <circle cx="30" cy="110" r="8" fill="#38bdf8" />
+    <circle cx="210" cy="110" r="8" fill="#06b6d4" />
+    <line x1="30" y1="110" x2="85" y2="110" stroke="#0284c7" stroke-width="4" stroke-linecap="round" />
+    <line x1="155" y1="110" x2="210" y2="110" stroke="#0284c7" stroke-width="4" stroke-linecap="round" />
+
+    <polygon points="120,150 70,225 170,225" fill="none" stroke="url(#cyanGrad)" stroke-width="6" stroke-linejoin="round" />
+    <circle cx="120" cy="195" r="10" fill="#38bdf8" />
+  </g>
+
+  <!-- High-Tech Brand Typography: TAHA -->
+  <text x="256" y="390" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="76" letter-spacing="10" fill="#ffffff">
+    TAHA
+  </text>
+
+  <!-- Subtitle: SOFTWARE & APPS in Arabic / English -->
+  <text x="256" y="435" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="20" letter-spacing="4" fill="#38bdf8">
+    تطبيقات وبرامج
+  </text>
+</svg>

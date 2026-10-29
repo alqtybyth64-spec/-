@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /apps
+Allow: /categories
+Allow: /web-design
+Allow: /contact
+Allow: /privacy
+Disallow: /api/
+Disallow: /admin
+
+Sitemap: /sitemap.xml

@@ -1,0 +1,128 @@
+{
+  "entities": {
+    "SiteSettings": {
+      "title": "SiteSettings",
+      "description": "Global website settings controlled exclusively by the administrator",
+      "type": "object",
+      "properties": {
+        "siteName": { "type": "string", "maxLength": 100 },
+        "siteDescription": { "type": "string", "maxLength": 500 },
+        "logoUrl": { "type": "string", "maxLength": 500 },
+        "iconUrl": { "type": "string", "maxLength": 500 },
+        "primaryColor": { "type": "string", "maxLength": 30 },
+        "secondaryColor": { "type": "string", "maxLength": 30 },
+        "whatsappNumber": { "type": "string", "maxLength": 50 },
+        "whatsappMessage": { "type": "string", "maxLength": 200 },
+        "showFloatingWhatsapp": { "type": "boolean" },
+        "footerText": { "type": "string", "maxLength": 500 },
+        "copyrightText": { "type": "string", "maxLength": 200 },
+        "developerBio": { "type": "string", "maxLength": 1000 },
+        "seoTitle": { "type": "string", "maxLength": 150 },
+        "seoDescription": { "type": "string", "maxLength": 300 },
+        "privacyPolicyText": { "type": "string", "maxLength": 5000 },
+        "heroTitle": { "type": "string", "maxLength": 200 },
+        "heroSubtitle": { "type": "string", "maxLength": 300 },
+        "updatedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["siteName", "siteDescription"]
+    },
+    "AppItem": {
+      "title": "AppItem",
+      "description": "Software or application created and managed by TAHA",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 150 },
+        "iconUrl": { "type": "string", "maxLength": 500 },
+        "shortDescription": { "type": "string", "maxLength": 300 },
+        "fullDescription": { "type": "string", "maxLength": 4000 },
+        "version": { "type": "string", "maxLength": 50 },
+        "fileSize": { "type": "string", "maxLength": 50 },
+        "operatingSystem": { "type": "string", "maxLength": 100 },
+        "category": { "type": "string", "maxLength": 100 },
+        "downloadUrl": { "type": "string", "maxLength": 1000 },
+        "isExternalDownload": { "type": "boolean" },
+        "isFeatured": { "type": "boolean" },
+        "isPublished": { "type": "boolean" },
+        "downloadCount": { "type": "number" },
+        "createdAt": { "type": "string", "maxLength": 50 },
+        "updatedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "name", "shortDescription", "version", "downloadUrl", "isPublished"]
+    },
+    "Advertisement": {
+      "title": "Advertisement",
+      "description": "Slider advertisements and announcement banners",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "title": { "type": "string", "maxLength": 150 },
+        "imageUrl": { "type": "string", "maxLength": 1000 },
+        "text": { "type": "string", "maxLength": 300 },
+        "targetUrl": { "type": "string", "maxLength": 1000 },
+        "durationSeconds": { "type": "number" },
+        "order": { "type": "number" },
+        "isPublished": { "type": "boolean" },
+        "startDate": { "type": "string", "maxLength": 50 },
+        "endDate": { "type": "string", "maxLength": 50 },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "title", "imageUrl", "isPublished"]
+    },
+    "SocialLink": {
+      "title": "SocialLink",
+      "description": "Dynamic social media accounts with official icons",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "platform": { "type": "string", "maxLength": 50 },
+        "title": { "type": "string", "maxLength": 100 },
+        "url": { "type": "string", "maxLength": 500 },
+        "order": { "type": "number" },
+        "isEnabled": { "type": "boolean" },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "platform", "url", "isEnabled"]
+    },
+    "ServiceRequest": {
+      "title": "ServiceRequest",
+      "description": "Customer inquiry for website or custom app design and development",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "clientName": { "type": "string", "maxLength": 100 },
+        "contactMethod": { "type": "string", "maxLength": 50 },
+        "contactValue": { "type": "string", "maxLength": 150 },
+        "projectType": { "type": "string", "maxLength": 100 },
+        "projectDetails": { "type": "string", "maxLength": 3000 },
+        "budget": { "type": "string", "maxLength": 100 },
+        "status": { "type": "string", "maxLength": 50 },
+        "createdAt": { "type": "string", "maxLength": 50 },
+        "updatedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "clientName", "contactMethod", "contactValue", "projectType", "projectDetails", "status"]
+    }
+  },
+  "firestore": {
+    "/settings/{settingId}": {
+      "schema": "SiteSettings",
+      "description": "Global website configuration"
+    },
+    "/apps/{appId}": {
+      "schema": "AppItem",
+      "description": "Applications and software catalog"
+    },
+    "/ads/{adId}": {
+      "schema": "Advertisement",
+      "description": "Homepage advertisement banners"
+    },
+    "/socialLinks/{linkId}": {
+      "schema": "SocialLink",
+      "description": "Social media links"
+    },
+    "/serviceRequests/{requestId}": {
+      "schema": "ServiceRequest",
+      "description": "Customer requests for website and app development"
+    }
+  }
+}
